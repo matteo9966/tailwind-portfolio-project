@@ -9,18 +9,24 @@
     scroll-behavior: smooth;
   }
 
+  @base {
+    html{
+      @apply font-roboto;
+    }
+  }
+
   @layer components {
 
     .btn-primary{
-      @apply p-2 uppercase border bg-primary border-primary text-white transition-colors hover:bg-white hover:text-primary hover:border-white duration-500
+      @apply font-roboto p-2 uppercase border bg-primary border-primary text-white transition-colors hover:bg-white hover:text-primary hover:border-white duration-500
     }
 
     .btn-secondary{
-      @apply p-2 uppercase bg-transparent border border-white text-white transition-colors hover:bg-white hover:text-primary duration-500
+      @apply font-roboto p-2 uppercase bg-transparent border border-white text-white transition-colors hover:bg-white hover:text-primary duration-500
     }
 
     .menu-item{
-      @apply font-montserrat uppercase text-white text-sm hover:text-primary transition-colors duration-500 font-medium
+      @apply uppercase text-white text-sm hover:text-primary transition-colors duration-500 font-medium
     }
 
     // .max-container {

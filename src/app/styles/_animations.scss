@@ -1,0 +1,13 @@
+@keyframes background-animation {
+    0%{
+      background-size: 101%;
+    }
+
+    100%{
+        background-size: 100%;
+    }
+}
+
+@mixin background-animation{
+    animation-name: background-animation;
+}

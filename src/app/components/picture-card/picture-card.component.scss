@@ -1,0 +1,78 @@
+$rotation-animation-duration:0.5s;
+$sliding-animation-delay:0.3s;
+$sliding-animation-duration:1s;
+$original-rotation:rotateZ(7deg);
+.picture-card {
+  position: relative;
+  transform:$original-rotation;
+  opacity:0;
+  overflow: hidden;
+  &__window-1 {
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    // border: 1px solid green;
+    bottom: 50%; //= to bottom:100%
+  }
+
+  &__window-2 {
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    // border: 1px solid red;
+    bottom: 0;
+    top: 50%; // = to top:100%;
+  }
+}
+
+.animate-window-1{
+    animation-name: slide-up;
+    animation-timing-function: linear;
+    // animation-delay:$sliding-animation-delay;
+    animation-fill-mode: forwards;
+    animation-duration: $sliding-animation-duration;
+}
+
+.animate-window-2{
+    animation-name:slide-down;
+    animation-timing-function: linear;
+    // animation-delay: $sliding-animation-delay;
+    animation-fill-mode: forwards;
+    animation-duration: $sliding-animation-duration;
+}
+
+.animation-rotation{
+    animation-name: rotate;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-duration: $rotation-animation-duration;
+}
+
+@keyframes slide-down {
+  0% {
+    top: 50%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    bottom: 50%;
+  }
+  100% {
+    bottom: 100%;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateZ(10deg) scale(0.7);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateZ(0deg) scale(1);
+    opacity:1;
+  }
+}

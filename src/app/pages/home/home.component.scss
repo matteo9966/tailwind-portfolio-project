@@ -1,0 +1,27 @@
+@use '../../styles/animations' as a;
+.animate-in{
+    animation-name: slide-in;
+    animation-duration: 0.4s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-delay: 0.4s;
+    opacity: 0;
+}
+
+.animate-background{
+  @include a.background-animation;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slide-in {
+    0%{
+        transform: translateY(30%);
+        opacity: 0;
+    }
+    100%{
+        transform:translateY(0%);
+        opacity: 1;
+    }
+}
