@@ -9,7 +9,7 @@ import { HomeComponent } from "./pages/home/home.component";
     standalone: true,
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
-    imports: [CommonModule, RouterOutlet, NavbarComponent, HomeComponent]
+    imports: [CommonModule, RouterOutlet, NavbarComponent]
 })
 export class AppComponent {
   title = 'tailwind-portfolio-project';

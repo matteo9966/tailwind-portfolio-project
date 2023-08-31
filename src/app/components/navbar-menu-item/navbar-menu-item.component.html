@@ -1,8 +1,8 @@
 <div class="relative">
     <li class="menu-item peer py-5">
-        <a href="#">demos</a>
+        <a [href]="link">{{label}}</a>
     </li>
-    <div class="absolute top-[90%] bg-white w-[150px] invisible peer-hover:visible hover:visible">
+    <div *ngIf="menuLinks.length>0" class="absolute top-[90%] bg-white w-[150px] invisible peer-hover:visible hover:visible">
         <ul class="flex flex-col py-2 px-3 gap-1 uppercase text-sm tracking-wider font-bold">
             <li>
                 <a href="">Item 1</a>

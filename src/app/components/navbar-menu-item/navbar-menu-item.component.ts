@@ -11,5 +11,6 @@ import { CommonModule } from '@angular/common';
 })
 export class NavbarMenuItemComponent {
   @Input() label="";
+  @Input() link =""; //the link to the page
   @Input() menuLinks:{label:string,link:string}[]=[]
 }
