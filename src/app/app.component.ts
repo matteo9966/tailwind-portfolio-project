@@ -12,5 +12,5 @@ import { HomeComponent } from "./pages/home/home.component";
     imports: [CommonModule, RouterOutlet, NavbarComponent, HomeComponent]
 })
 export class AppComponent {
-  title = 'self-improv';
+  title = 'tailwind-portfolio-project';
 }

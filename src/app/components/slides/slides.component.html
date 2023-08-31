@@ -1,0 +1,44 @@
+<div class=" pt-2 relative items-center w-full flex-col md:flex md:flex-row md:gap-12 lg:gap-20 lg:max-w-[50vw] pb-5">
+  <div class="max-w-[100px] basis-[100px]  md:flex-1">
+    <img
+      class="rounded-[50%] border-4 border-primary aspect-square"
+      [src]="data[currentIndex].imageURL"
+      [alt]="data[currentIndex].name"
+    />
+  </div>
+
+  <div class="flex flex-col items-center gap-5">
+    <img
+      src="assets/icons/quotes.webp"
+      alt="quotes"
+      class="h-[30px] w-[35px] mb-3"
+    />
+    <p class="text-[21px] md:text-[24px] lg:text-[30px] font-yevesa text-white max-w-prose">
+      {{ data[currentIndex].description }}
+    </p>
+    <span class="font-yevesa text-xl text-primary">
+      {{ data[currentIndex].name }}
+    </span>
+    <span class="text-white text-lg"> Lovely Visitor </span>
+  </div>
+  <div class="absolute flex gap-5 bottom-0 right-0">
+    <div
+      (click)="setCurrentIndex(i)"
+      *ngFor="let d of data; let i = index"
+      class="p-1 border border-transparent rounded-full flex justify-center items-center"
+      [ngClass]="{
+        'p-1': i == currentIndex,
+        border: i == currentIndex,
+        'border-white': i == currentIndex
+      }"
+    >
+      <span
+        class="w-2 h-2 rounded-full bg-white block"
+        [ngClass]="{
+          'opacity-100': i == currentIndex,
+          'opacity-50': i !== currentIndex
+        }"
+      ></span>
+    </div>
+  </div>
+</div>

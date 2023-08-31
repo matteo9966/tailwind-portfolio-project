@@ -5,6 +5,30 @@ import { Subject, delay, filter } from 'rxjs';
   selector: '[observeVisibility]',
   standalone:true,
 })
+/** 
+ * @description how it works:
+ * this directive uses the intersectio observer of the dom.
+ * it emits a visible event when the element is visible in the dom.
+ * 
+ * Inside the ngOnInit create the observer. 
+ * check for entry.isIntersecting || entry.intersectionRatio > 0 inside 
+ * the callback function provided to the intersectionObserver class.
+ * if is observable use a subject$ observable inside the directive and 
+ * call next with the intersection entry and the observer
+ * 
+ * inside ngAfterViewInit start observing the observable, 
+ * subscribe to the subject$ 
+ * 
+ * isVisible function:
+ * it is usedd inside the callback function of the subject$ subscription:
+ * i recieve a value from the subject and check if the element is visible:
+ *  - create an intersection observer that emits obly once: 
+ *   -- create the observer, pass the element and return a promise that resolves with entry.intersectionRatio > 0 
+ *      and disconnect
+ * if is visible emit the visible event and stop observing
+ *   
+ * 
+ * */ 
 export class ObserveVisibilityDirective
   implements OnDestroy, OnInit, AfterViewInit {
   @Input() debounceTime = 200;

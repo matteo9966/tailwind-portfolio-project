@@ -25,6 +25,7 @@ module.exports = {
         hero:"url(assets/images/hero-bg.avif)",
         bigMoving:"url(assets/images/big-image-section.webp)",
         movingSquare:"url(assets/images/square-image.webp)",
+        slider:"url(assets/images/slides-bg.webp)"
 
       }
     },
