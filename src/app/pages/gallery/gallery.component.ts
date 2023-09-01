@@ -6,10 +6,11 @@ import {
   ViewContainerRef,
   ElementRef,
   OnDestroy,
+  ComponentRef,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GalleryImageComponent } from 'src/app/components/gallery-image/gallery-image.component';
-import { Subject } from 'rxjs';
+import { Subject, take } from 'rxjs';
 const imagesList = [
   {
     src: 'assets/images/gallery1.jpg',
@@ -78,7 +79,7 @@ export class GalleryComponent implements AfterViewInit, OnDestroy {
   images = imagesList;
   current = 0;
   intersect$ = new Subject(); //this subject emits when is empty
-
+  loadingImageComponent: ComponentRef<GalleryImageComponent> | null = null;
   @ViewChild('containerRef', { read: ViewContainerRef })
   //@ts-ignore
   container: ViewContainerRef;
@@ -88,7 +89,7 @@ export class GalleryComponent implements AfterViewInit, OnDestroy {
   observe: ElementRef;
 
   ngAfterViewInit(): void {
-    this.createObserverAndObserve()
+    this.createObserverAndObserve();
   }
 
   ngOnDestroy(): void {
@@ -106,7 +107,7 @@ export class GalleryComponent implements AfterViewInit, OnDestroy {
     component.instance.src = imagesList[this.current].src;
     component.instance.alt = imagesList[this.current].alt;
     this.current++;
-    component.changeDetectorRef.detectChanges();
+    return component;
   }
 
   /**
@@ -115,9 +116,24 @@ export class GalleryComponent implements AfterViewInit, OnDestroy {
    */
   createObserverAndObserve() {
     this.observer = new IntersectionObserver((entries) => {
-      const observed=entries[0];
-      if(observed.isIntersecting || observed.intersectionRatio>0){
-        this.appendImage();
+      const observed = entries[0];
+      if (this.loadingImageComponent) {
+        //wait for it to complete just return, I'll be listening
+        return;
+      }
+
+      if (observed.isIntersecting || observed.intersectionRatio > 0) {
+        const component = this.appendImage();
+        component?.changeDetectorRef?.detectChanges();
+        if (component) {
+          this.loadingImageComponent=component;
+          component.instance.loaded //loaded emitter emits when the image is loaded so i can load another image
+            .asObservable()
+            .pipe(take(1))
+            .subscribe(() => {
+              this.loadingImageComponent = null;
+            });
+        }
       }
     });
     this.observer.observe(this.observe.nativeElement);

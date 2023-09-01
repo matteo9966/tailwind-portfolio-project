@@ -1,3 +1,6 @@
-<div>
-  <img [src]="src" [alt]="alt" (load)="onLoaded($event)"/>
+<div
+  [ngClass]="{ 'blurred-placeholder': blurry$ | async }"
+  class="flex items-center justify-center"
+>
+  <img [src]="src" [alt]="alt" (load)="onLoaded($event)" />
 </div>

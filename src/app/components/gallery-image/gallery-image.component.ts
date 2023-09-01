@@ -6,8 +6,10 @@ import {
   Inject,
   ElementRef,
   EventEmitter,
+  ChangeDetectorRef,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 @Component({
   selector: 'app-gallery-image',
@@ -22,8 +24,18 @@ export class GalleryImageComponent {
   @Input({ required: true }) alt = '';
   @Output() loaded: EventEmitter<boolean> = new EventEmitter();
   elementRef = Inject(ElementRef);
+  // changeDetectionRef = Inject(ChangeDetectorRef)
+   private showBlurry$ = new BehaviorSubject(true) ;
 
   onLoaded(e: any) {
     this.loaded.emit(true);
+    setTimeout(() => {
+      this.showBlurry$.next(false);
+      this.showBlurry$.complete();
+    }, 2000);
+  }
+
+  get blurry$(){
+    return this.showBlurry$.asObservable();
   }
 }

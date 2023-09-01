@@ -1,0 +1,31 @@
+img {
+  opacity: 1;
+  transition-property: opacity;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+}
+
+.blurred-placeholder {
+  width: 90vw;
+  height: 700px;
+  background-color: rgb(206, 206, 206);
+  border-radius: 3px;
+  animation-name: loading;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+  animation-duration: 2s;
+  opacity: 0.3;
+  & > img {
+    opacity: 0;
+  }
+}
+
+@keyframes loading {
+  0% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
