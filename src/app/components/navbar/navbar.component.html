@@ -3,7 +3,7 @@
     <img src="assets/icons/icon-lion.png" alt="" width="60px" height="60px" />
   </div>
   <ul
-    class="flex gap-10 items-center justify-between"
+    class=" hidden gap-10 items-center justify-between lg:flex"
   >
   <app-navbar-menu-item label="demos"></app-navbar-menu-item>
   <app-navbar-menu-item label="gallery" link="/gallery"></app-navbar-menu-item>
@@ -14,7 +14,7 @@
   <div class="flex justify-center items-center mr-10">
     <ng-container *ngTemplateOutlet="cart"></ng-container>
   </div>
-  <div class="flex gap-5">
+  <div class="hidden lg:flex gap-5">
     <app-button buttonType="secondary">events</app-button>
     <app-button buttonType="primary">guided visits</app-button>
   </div>

@@ -1,6 +1,8 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component,ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { interval } from 'rxjs';
 
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 @Component({
   selector: 'app-slides',
   standalone: true,
@@ -10,8 +12,6 @@ import { CommonModule } from '@angular/common';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SlidesComponent {
-  currentIndex = 0;
-
   data = [
     {
       imageURL: 'assets/images/avatar1.webp',
@@ -38,8 +38,29 @@ export class SlidesComponent {
       name: 'Anz Zimmer 4',
     },
   ];
+  currentIndex = 0;
+  constructor(private cdr:ChangeDetectorRef){
+    this.circulateUsers();
+  }
 
-  setCurrentIndex(i:number){
-    this.currentIndex=i;
+
+  setCurrentIndex(i: number) {
+    this.currentIndex = i;
+  }
+
+  circulateUsers() {
+    interval(3000).pipe(takeUntilDestroyed()).subscribe(()=>{
+      const length= this.data.length;
+      if(length===0){
+        return
+      }
+      if(this.currentIndex>=length-1){
+        this.currentIndex=0;
+      }
+      else{
+        this.currentIndex++;
+      }
+      this.cdr.markForCheck();
+    });
   }
 }

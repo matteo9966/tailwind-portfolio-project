@@ -1,5 +1,8 @@
 @use './app/styles/tailwind';
 @use './app/styles/fonts';
+html{
+    height: 100%;
+}
 .dontshow{
     opacity:0
 }

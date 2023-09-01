@@ -1,5 +1,5 @@
-<div class=" pt-2 relative items-center w-full flex-col md:flex md:flex-row md:gap-12 lg:gap-20 lg:max-w-[50vw] pb-5">
-  <div class="max-w-[100px] basis-[100px]  md:flex-1">
+<div class="flex pb-5 pt-2 relative w-full flex-col items-center md:items-start md:flex-row md:gap-12 lg:gap-20 lg:max-w-[50vw] ">
+  <div class="max-w-[100px] flex grow-0 shrink-0 basis-[100px]">
     <img
       class="rounded-[50%] border-4 border-primary aspect-square"
       [src]="data[currentIndex].imageURL"
@@ -11,9 +11,9 @@
     <img
       src="assets/icons/quotes.webp"
       alt="quotes"
-      class="h-[30px] w-[35px] mb-3"
+      class="h-[30px] w-[35px] mb-3 mt-3"
     />
-    <p class="text-[21px] md:text-[24px] lg:text-[30px] font-yevesa text-white max-w-prose">
+    <p class="text-center text-[21px] w-[90vw] h-[300px] font-yevesa text-white md:text-[24px] lg:text-[30px] md:max-w-[30vw]">
       {{ data[currentIndex].description }}
     </p>
     <span class="font-yevesa text-xl text-primary">
@@ -21,7 +21,7 @@
     </span>
     <span class="text-white text-lg"> Lovely Visitor </span>
   </div>
-  <div class="absolute flex gap-5 bottom-0 right-0">
+  <div class="absolute flex gap-5 bottom-0 pt-3 md:right-0">
     <div
       (click)="setCurrentIndex(i)"
       *ngFor="let d of data; let i = index"
