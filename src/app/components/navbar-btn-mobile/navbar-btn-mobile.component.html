@@ -1,0 +1,22 @@
+<div class="w-[50px] h-[40px] relative" [ngClass]="{ 'open-menu': true }">
+  <span
+    *ngIf="!open"
+    class="w-full h-1 border-t-white border-t-2 block absolute item-1"
+  ></span>
+  <span
+    *ngIf="!open"
+    class="w-full h-1 border-t-white border-t-2 block absolute top-3"
+  ></span>
+  <span
+    *ngIf="open"
+    class="w-full h-1 border-t-white border-t-2 block absolute top-3 item-1"
+  ></span>
+  <span
+    *ngIf="open"
+    class="w-full h-1 border-t-white border-t-2 block absolute top-3 item-2"
+  ></span>
+  <span
+    *ngIf="!open"
+    class="w-full h-1 border-t-white border-t-2 block absolute top-6 item-2"
+  ></span>
+</div>

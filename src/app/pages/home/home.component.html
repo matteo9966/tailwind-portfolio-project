@@ -1,7 +1,7 @@
 <section class="w-full min-h-[100vh] bg-no-repeat">
-  <section class="bg-hero pt-[15rem]">
+  <section class="bg-hero pt-24 md:pt-[15rem]">
     <div
-      class="max-w-[600px] w-[50%] ml-16 transition-all animate-in"
+      class="max-w-[600px] lg:w-[50%] ml-16 transition-all animate-in"
     >
       <div class="font-yevesa text-[70px] text-white">
         Discover and get to know.
@@ -13,17 +13,19 @@
       </div>
     </div>
     <div
-      class="mt-5 flex flex-col md:flex-row gap-[20px] justify-between p-10 items-center"
+      class="mt-5 flex flex-col md:flex-row gap-[20px] justify-between p-4 md:p-10 items-center"
     >
       <div
-        class="h-full flex gap-3 items-center justify-center text-white pl-14"
+        class="h-full flex gap-3 items-center justify-center text-white pl-4 lg:pl-14"
       >
         <app-play-button></app-play-button>
         <span class="uppercase text-lg font-semibold whitespace-nowrap"
           >our animals</span
         >
       </div>
-      <app-scroll-pictures></app-scroll-pictures>
+      <div class=" max-w-[90vw] overflow-hidden">
+        <app-scroll-pictures></app-scroll-pictures>
+      </div>
     </div>
   </section>
   <section class="bg-backgroundMain w-full">
@@ -37,7 +39,7 @@
         <app-text-card></app-text-card>
       </div>
       <div class="pt-40 flex-col lg:flex-row flex gap-[40px]">
-        <div class="basis-[100%] lg:basis-[40%] flex-shrink-0 max-w-[500px]">
+        <div class="hidden  lg:block basis-[100%] lg:basis-[40%] flex-shrink-0">
           <app-moving-images></app-moving-images>
         </div>
         <section
@@ -56,13 +58,13 @@
           </h2>
           <div class="lg:pl-[50px]">
             <p
-              class="text-lg tracking-wide text-primary font-semibold leading-6 max-w-prose mb-4"
+              class="text-lg tracking-wide text-primary font-semibold leading-6 lg:max-w-prose mb-4"
             >
               We provide the finest care to the animals in our parks and
               redouble our efforts to protect wildlife around the world.
             </p>
             <p
-              class="text-[18px] tracking-wide text-white font-normal leading-6 max-w-prose"
+              class="text-[18px] tracking-wide text-white font-normal leading-6 lg:max-w-prose"
             >
               At our zoo, we are committed to conservation and protecting the
               environment. We work with various organizations to support

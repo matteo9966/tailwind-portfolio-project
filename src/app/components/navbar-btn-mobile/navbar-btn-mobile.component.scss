@@ -1,0 +1,13 @@
+.open-menu{
+
+    .item-1{
+      transform:rotateZ(45deg);
+      transform-origin: center;
+    }
+    .item-2{
+        transform-origin:center;
+        transform:rotateZ(-45deg);
+  
+    }
+
+}
