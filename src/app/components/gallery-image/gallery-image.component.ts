@@ -8,13 +8,12 @@ import {
   EventEmitter,
   ChangeDetectorRef,
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule,NgOptimizedImage} from '@angular/common';
 import { BehaviorSubject, Subject } from 'rxjs';
-
 @Component({
   selector: 'app-gallery-image',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,NgOptimizedImage],
   templateUrl: './gallery-image.component.html',
   styleUrls: ['./gallery-image.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

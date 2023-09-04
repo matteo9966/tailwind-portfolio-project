@@ -1,16 +1,9 @@
 <section
   class="overflow-x-scroll flex gap-5 max-h-[270px] overflow-y-hidden scrollbar-thin scrollbar-track-slate-500 scrollbar-thumb-primary py-2"
 >
-  <app-picture-card></app-picture-card>
-  <app-picture-card></app-picture-card>
-  <app-picture-card></app-picture-card>
-  <app-picture-card></app-picture-card>
-  <app-picture-card></app-picture-card>
-  <app-picture-card></app-picture-card>
-  <app-picture-card></app-picture-card>
-  <app-picture-card></app-picture-card>
-  <app-picture-card></app-picture-card>
-  <app-picture-card></app-picture-card>
-  <app-picture-card></app-picture-card>
-  <app-picture-card></app-picture-card>
+  <app-picture-card
+    *ngFor="let img of slidingImages"
+    [description]="img.description"
+    [imageUrl]="img.imageUrl"
+  ></app-picture-card>
 </section>

@@ -1,25 +1,28 @@
-<nav class="w-full h-[80px] flex items-center bg-black m-auto">
+<div class="fixed top-0 left-0">
+  <ng-template #navbarContainer></ng-template>
+</div>
+<nav class="p-2 shrink-0 w-full h-[80px] flex justify-between lg:justify-center items-center bg-black m-auto">
   <div class="mr-48">
     <img src="assets/icons/icon-lion.png" alt="" width="60px" height="60px" />
   </div>
   <ul
-    class=" hidden gap-10 items-center justify-between lg:flex"
+    class=" gap-10 items-center justify-between if-large-show lg:flex"
   >
   <app-navbar-menu-item label="demos"></app-navbar-menu-item>
   <app-navbar-menu-item label="gallery" link="/gallery"></app-navbar-menu-item>
   <app-navbar-menu-item label="animals"></app-navbar-menu-item>
-  <app-navbar-menu-item label="all pages"></app-navbar-menu-item>
+  <app-navbar-menu-item label="faq" link="/faq"></app-navbar-menu-item>
   </ul>
-  <span class="h-[60%] bg-white w-[1px] mx-12"></span>
-  <div class="flex justify-center items-center mr-10">
+  <span class="if-large-show h-[60%] bg-white w-[1px] mx-12"></span>
+  <div class="if-large-show flex justify-center items-center mr-10">
     <ng-container *ngTemplateOutlet="cart"></ng-container>
   </div>
-  <div class="hidden lg:flex gap-5">
+  <div class="if-large-show lg:flex gap-5">
     <app-button buttonType="secondary">events</app-button>
     <app-button buttonType="primary">guided visits</app-button>
   </div>
-  <div class=" block md:hidden">
-    <app-navbar-btn-mobile></app-navbar-btn-mobile>
+  <div class="if-mobile-show">
+    <app-navbar-btn-mobile [open]="open" (click)="open=!open"></app-navbar-btn-mobile>
   </div>
 </nav>
 

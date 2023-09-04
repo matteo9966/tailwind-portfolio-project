@@ -14,24 +14,26 @@ import {
 } from '@angular/animations';
 import { SlideInDirective } from 'src/app/directives/slide-in.directive';
 import { ObserveVisibilityDirective } from 'src/app/directives/observe-visibility.directive';
-import { SlidesComponent } from "../../components/slides/slides.component";
+import { SlidesComponent } from '../../components/slides/slides.component';
 @Component({
-    selector: 'app-home',
-    standalone: true,
-    templateUrl: './home.component.html',
-    styleUrls: ['./home.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    animations: [],
-    imports: [
-        CommonModule,
-        PictureCardComponent,
-        ScrollPicturesComponent,
-        PlayButtonComponent,
-        TextCardComponent,
-        MovingImagesComponent,
-        SlideInDirective,
-        ObserveVisibilityDirective,
-        SlidesComponent
-    ]
+  selector: 'app-home',
+  standalone: true,
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  animations: [],
+  imports: [
+    CommonModule,
+    PictureCardComponent,
+    ScrollPicturesComponent,
+    PlayButtonComponent,
+    TextCardComponent,
+    MovingImagesComponent,
+    SlideInDirective,
+    ObserveVisibilityDirective,
+    SlidesComponent,
+  ],
 })
-export class HomeComponent {}
+export class HomeComponent {
+
+}

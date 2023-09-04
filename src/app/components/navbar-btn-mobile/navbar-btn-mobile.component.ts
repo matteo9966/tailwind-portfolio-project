@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component,EventEmitter,Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component,EventEmitter,Output,Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -10,6 +10,18 @@ import { CommonModule } from '@angular/common';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NavbarBtnMobileComponent {
- @Output() openChange:EventEmitter<boolean> = new EventEmitter()
- open=true;
+ 
+  // @Output() openChange:EventEmitter<boolean> = new EventEmitter()
+  private _open=false;
+  
+ 
+  @Input()  
+  set open(open:boolean){
+    this._open=open
+  }
+  
+  get open(){
+    return this._open
+  }
+
 }

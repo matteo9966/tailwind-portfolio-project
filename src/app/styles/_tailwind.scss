@@ -55,6 +55,13 @@
   }
   
   @layer utilities {
+    .if-mobile-show{
+      @apply block lg:hidden
+    }
+    .if-large-show{
+      @apply hidden lg:block
+    }
+
     /* .padding {
       @apply sm:px-16 px-8 sm:py-24 py-12;
     }

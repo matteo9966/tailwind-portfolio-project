@@ -1,13 +1,16 @@
 <div
-  class="w-[250px] aspect-square rounded bg-cover bg-no-repeat  picture-card"
-  [style.backgroundImage]="'url(assets/images/hero-bg.avif)'"
+  class="bg-[size:100%] hover:bg-[size:103%] origin-center transition-all duration-700 delay-150 w-[250px] aspect-square rounded bg-no-repeat picture-card"
+  [style.backgroundImage]="'url(' + imageUrl + ')'"
   observeVisibility
   (visible)="animate()"
   #card
 >
-<span class="picture-card__window-1 bg-black opacity-70" #window1></span>
-<span class="picture-card__window-2 bg-black opacity-70" #window2></span>
+  <span class="picture-card__window-1 bg-black opacity-70" #window1></span>
+  <span class="picture-card__window-2 bg-black opacity-70" #window2></span>
 
-<p class="font-yevesa text-lg leading-7 text-white tracking-wider mt-36">Visit the zoo and meet the zebras</p>
-
+  <p
+    class="font-yevesa text-lg leading-7 hover:cursor-pointer text-white tracking-wider mt-36 hover:text-primary p-2 transition-colors duration-500"
+  >
+    {{ description }}
+  </p>
 </div>

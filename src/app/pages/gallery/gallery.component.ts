@@ -104,8 +104,8 @@ export class GalleryComponent implements AfterViewInit, OnDestroy {
       return;
     }
     const component = this.container.createComponent(GalleryImageComponent);
-    component.instance.src = imagesList[this.current].src;
-    component.instance.alt = imagesList[this.current].alt;
+    component.setInput('src',imagesList[this.current].src)
+    component.setInput('alt',imagesList[this.current].alt)
     this.current++;
     return component;
   }
@@ -124,18 +124,35 @@ export class GalleryComponent implements AfterViewInit, OnDestroy {
 
       if (observed.isIntersecting || observed.intersectionRatio > 0) {
         const component = this.appendImage();
-        component?.changeDetectorRef?.detectChanges();
         if (component) {
           this.loadingImageComponent=component;
           component.instance.loaded //loaded emitter emits when the image is loaded so i can load another image
             .asObservable()
             .pipe(take(1))
-            .subscribe(() => {
+            .subscribe(async () => {
               this.loadingImageComponent = null;
+              const isVisible = await this.isVisible();
+              if(isVisible){
+               this.appendImage();
+
+              }
             });
         }
       }
     });
     this.observer.observe(this.observe.nativeElement);
+  }
+  isVisible(){
+    return new Promise(resolve=>{
+      const intersection = new IntersectionObserver((entries=>{
+          const entry = entries[0];
+          if(!entry){
+            resolve(false)
+            return
+          }
+         resolve(entry.isIntersecting)
+      }));
+      intersection.observe(this.observe.nativeElement)
+    })
   }
 }

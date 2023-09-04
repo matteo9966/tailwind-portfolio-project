@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 export const routesLinks = {
   home: 'home',
   photoGallery: 'gallery',
+  faq: 'faq',
 };
 export const routes: Routes = [
   {
@@ -15,6 +16,11 @@ export const routes: Routes = [
       import('./pages/gallery/gallery.component').then(
         (g) => g.GalleryComponent
       ),
+  },
+  {
+    path: routesLinks.faq,
+    loadComponent: () =>
+      import('./pages/faq/faq.component').then((c) => c.FaqComponent),
   },
   {
     path: '',

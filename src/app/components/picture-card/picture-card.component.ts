@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component,inject,Renderer2,ViewChild,ElementRef,AfterViewInit, } from '@angular/core';
+import { ChangeDetectionStrategy, Component,inject,Renderer2,ViewChild,ElementRef,AfterViewInit, Input, } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ObserveVisibilityDirective } from 'src/app/directives/observe-visibility.directive';
 
@@ -20,6 +20,8 @@ export class PictureCardComponent implements AfterViewInit {
   @ViewChild('window1') window1!:ElementRef;
   @ViewChild('window2') window2!:ElementRef;
   @ViewChild('card') card!:ElementRef;
+  @Input() description="";
+  @Input() imageUrl="";
 
   animate(){
     if(this.window1 && this.window2 && this.card){
