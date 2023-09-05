@@ -1,0 +1,27 @@
+<div class="bg-backgroundMain group" [ngClass]="{ open: menuOpen }">
+  
+  <div
+    class="flex py-7 px-2 text-white justify-between items-center hover:text-primary transition-colors duration-300 border-t-[1px] border-b-[1px] border-gray-800"
+    (click)="menuOpen = !menuOpen"
+  >
+    <span
+      class="group-[.open]:text-primary transition-colors duration-300 text-lg"
+      >{{ question }}</span
+    >
+    <div class="relative w-6 h-6 flex items-center justify-center">
+      <span
+        class="absolute w-6 h-[2px] bg-white block group-[.open]:bg-primary transition-all duration-300"
+      ></span>
+      <span
+        class="absolute w-6 h-[2px] bg-white block rotate-90 group-[.open]:rotate-0 group-[.open]:bg-primary transition-all duration-300"
+      ></span>
+    </div>
+  </div>
+
+   <div class="w-full max-h-0 group-[.open]:max-h-[700px] overflow-hidden transition-all duration-700">
+    <p class="text-white p-6">
+      {{answer}}
+    </p>
+  </div>
+
+</div>

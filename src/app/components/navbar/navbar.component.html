@@ -1,14 +1,14 @@
 <div class="fixed top-0 left-0">
   <ng-template #navbarContainer></ng-template>
 </div>
-<nav class="p-2 shrink-0 w-full h-[80px] flex justify-between lg:justify-center items-center bg-black m-auto">
+<nav [ngClass]="{'bg-black':showBg$|async}" class="p-2 shrink-0 w-full h-[80px] flex justify-between lg:justify-center items-center m-auto transition-colors duration-300">
   <div class="mr-48">
     <img src="assets/icons/icon-lion.png" alt="" width="60px" height="60px" />
   </div>
   <ul
     class=" gap-10 items-center justify-between if-large-show lg:flex"
   >
-  <app-navbar-menu-item label="demos"></app-navbar-menu-item>
+  <app-navbar-menu-item label="home" link="/"></app-navbar-menu-item>
   <app-navbar-menu-item label="gallery" link="/gallery"></app-navbar-menu-item>
   <app-navbar-menu-item label="animals"></app-navbar-menu-item>
   <app-navbar-menu-item label="faq" link="/faq"></app-navbar-menu-item>

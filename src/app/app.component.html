@@ -1,10 +1,16 @@
-
-<header class="flex justify-center fixed w-full backdrop-opacity-50 bg-black z-[100]">
+<!-- <header class="z-10 flex justify-center fixed w-full backdrop-opacity-50 bg-transparent">
  <app-navbar></app-navbar>
 </header>
-<main>
+<main >
   <router-outlet></router-outlet>
 </main>
 <footer class="bg-backgroundMain">
  <app-footer></app-footer>
-</footer>
+</footer> -->
+
+<app-text-drawer
+  question="what is your name"
+  [answer]="
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam consectetur id voluptatum, consequatur sint iure quis explicabo perspiciatis tempora natus!'
+  "
+></app-text-drawer>
