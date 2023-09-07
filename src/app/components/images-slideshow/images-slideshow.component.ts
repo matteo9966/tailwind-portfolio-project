@@ -32,6 +32,22 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 })
 export class ImagesSlideshowComponent {
   private _scrollX = 0;
+
+  images=[
+    {src:'assets/images/gallery1.jpg',alt:'gallery image'},
+    {src:'assets/images/gallery2.jpg',alt:'gallery image'},
+    {src:'assets/images/gallery3.jpg',alt:'gallery image'},
+    {src:'assets/images/gallery4.jpg',alt:'gallery image'},
+    {src:'assets/images/gallery5.jpg',alt:'gallery image'},
+    {src:'assets/images/gallery6.jpg',alt:'gallery image'},
+    {src:'assets/images/gallery7.jpg',alt:'gallery image'},
+    {src:'assets/images/gallery8.jpg',alt:'gallery image'},
+    {src:'assets/images/gallery9.jpg',alt:'gallery image'},
+    {src:'assets/images/gallery10.jpg',alt:'gallery image'},
+    {src:'assets/images/gallery11.jpg',alt:'gallery image'},
+    {src:'assets/images/gallery12.jpg',alt:'gallery image'},
+  ]
+
   mouseMove$ = new Subject<{ x: number; y: number }>();
   mouseLeave$ = new Subject<boolean>();
   mouseEnter$ = new Subject<boolean>();
@@ -49,7 +65,6 @@ export class ImagesSlideshowComponent {
 
   cdr = inject(ChangeDetectorRef);
   renderer = inject(Renderer2);
-  images = [1, 2, 3];
   //@ts-ignore
   @ViewChild('container', { read: ElementRef }) container: ElementRef;
   @ViewChild('imagescontainer', { read: ElementRef })
@@ -139,7 +154,7 @@ export class ImagesSlideshowComponent {
   }
 
   scroll(mouseX: number, clientWidth: number) {
-    const speed=20; //change this speed to make the scroll go faster
+    const speed=12; //change this speed to make the scroll go faster
     const road = Math.round(this.containerWidth/2);
 
     if (!mouseX || !clientWidth) return;

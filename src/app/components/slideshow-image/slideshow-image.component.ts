@@ -18,18 +18,10 @@ import { CommonModule } from '@angular/common';
 })
 export class SlideshowImageComponent {
   //@ts-ignore
-  @Input({ required: true }) slideNumbers: number;
+  @Input({ required: true }) src: string;
   //@ts-ignore
-  @Input({ required: true }) slideNumber: number;
+  @Input({ required: true }) alt: string;
 
   elementRef = inject(ElementRef);
   render = inject(Renderer2);
-  ngOnInit() {
-    if (this.slideNumbers > 0) {
-      const middle = Math.floor(this.slideNumbers / 2);
-      if (this.slideNumber == middle) {
-    
-      }
-    }
-  }
 }
