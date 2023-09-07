@@ -18,6 +18,7 @@ import { MobileMenuComponent } from '../mobile-menu/mobile-menu.component';
 import { animate, style, transition, trigger } from '@angular/animations';
 import { Router,RouterEvent,Event, NavigationEnd, NavigationStart } from '@angular/router';
 import { Observable, Subject, debounce, debounceTime, filter, map } from 'rxjs';
+import { pagesConfig } from 'src/app/config/pages';
 @Component({
   selector: 'app-navbar',
   standalone: true,
@@ -40,6 +41,9 @@ import { Observable, Subject, debounce, debounceTime, filter, map } from 'rxjs';
   ],
 })
 export class NavbarComponent implements OnInit {
+
+  pages=Object.values(pagesConfig);
+
   private scroll$ = new Subject<number>();
   @HostListener('window:scroll')
   userScrolled(){

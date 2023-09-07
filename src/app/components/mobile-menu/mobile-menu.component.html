@@ -8,22 +8,17 @@
   </section>
   <section class="mt-9">
     <ul class="flex flex-col gap-4">
-      <li>
-        <a [routerLink]="['/']" class="uppercase menu-item">Home</a>
-      </li>
-      <li>
-        <a [routerLink]="['/gallery']" class="uppercase menu-item">gallery</a>
-      </li>
-      <li>
-        <a [routerLink]="['/faq']" class="uppercase menu-item">faq</a>
-      </li>
-      <li>
-        <a [routerLink]="['/']" class="uppercase menu-item">Demos 2</a>
+      <li *ngFor="let page of pages">
+        <a [routerLink]="[page.link]" class="uppercase menu-item">{{
+          page.label
+        }}</a>
       </li>
     </ul>
   </section>
   <section class="pt-8">
     <app-button buttonType="primary" class="my-4 block"> Events </app-button>
-    <app-button buttonType="secondary" class="my-4 block"> plan a visit </app-button>
+    <app-button buttonType="secondary" class="my-4 block">
+      plan a visit
+    </app-button>
   </section>
 </div>

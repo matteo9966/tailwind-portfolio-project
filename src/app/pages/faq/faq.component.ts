@@ -2,15 +2,26 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { TextDrawerComponent } from 'src/app/components/text-drawer/text-drawer.component';
 import { SlideIn2Directive } from 'src/app/directives/slide-in-2.directive';
+import { ImagesSlideshowComponent } from 'src/app/components/images-slideshow/images-slideshow.component';
+import { HeroComponent } from 'src/app/components/hero/hero.component';
+import { BodyTitleComponent } from 'src/app/components/body-title/body-title.component';
 
 @Component({
   selector: 'app-faq',
   standalone: true,
-  imports: [CommonModule, NgOptimizedImage, TextDrawerComponent,SlideIn2Directive],
+  imports: [
+    CommonModule,
+    NgOptimizedImage,
+    TextDrawerComponent,
+    SlideIn2Directive,
+    ImagesSlideshowComponent,
+    HeroComponent,
+    BodyTitleComponent,
+  ],
   templateUrl: './faq.component.html',
   styleUrls: ['./faq.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  hostDirectives:[]
+  hostDirectives: [],
 })
 export class FaqComponent {
   questions1 = [

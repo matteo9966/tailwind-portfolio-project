@@ -29,6 +29,10 @@
       @apply uppercase text-white text-sm hover:text-primary transition-colors duration-500 font-medium
     }
 
+    .body-container{
+      @apply w-full bg-backgroundMain pt-[80px]
+    }
+
     // .max-container {
     //   max-width: 1440px;
     //   margin: 0 auto;

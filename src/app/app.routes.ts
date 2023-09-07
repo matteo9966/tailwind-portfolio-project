@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { pagesConfig } from './config/pages';
 export const routesLinks = {
   home: 'home',
   photoGallery: 'gallery',
@@ -6,21 +7,28 @@ export const routesLinks = {
 };
 export const routes: Routes = [
   {
-    path: routesLinks.home,
+    path: pagesConfig.home.routerPath,
     loadComponent: () =>
       import('./pages/home/home.component').then((c) => c.HomeComponent),
   },
   {
-    path: routesLinks.photoGallery,
+    path: pagesConfig.gallery.routerPath,
     loadComponent: () =>
       import('./pages/gallery/gallery.component').then(
         (g) => g.GalleryComponent
       ),
   },
   {
-    path: routesLinks.faq,
+    path: pagesConfig.faq.routerPath,
     loadComponent: () =>
       import('./pages/faq/faq.component').then((c) => c.FaqComponent),
+  },
+  {
+    path: pagesConfig.tickets.routerPath,
+    loadComponent: () =>
+      import('./pages/tickets/tickets.component').then(
+        (t) => t.TicketsComponent
+      ),
   },
   {
     path: '',

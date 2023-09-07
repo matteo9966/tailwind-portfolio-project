@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { RouterLink } from '@angular/router';
 import { ButtonComponent } from "../button/button.component";
-
+import { pagesConfig } from 'src/app/config/pages';
 @Component({
     selector: 'app-mobile-menu',
     standalone: true,
@@ -29,4 +29,5 @@ import { ButtonComponent } from "../button/button.component";
     imports: [CommonModule, RouterLink, ButtonComponent]
 })
 export class MobileMenuComponent {
+    pages =Object.values(pagesConfig);
 }

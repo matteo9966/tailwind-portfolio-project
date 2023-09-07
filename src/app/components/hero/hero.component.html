@@ -1,0 +1,17 @@
+<section
+  class="w-full h-[60vh] relative pt-24 flex justify-center items-center"
+>
+  <img
+    class="object-cover object-center -z-10 brightness-50"
+    [ngSrc]="backgroundSrc"
+    [alt]="altBg"
+    fill
+    priority
+  />
+  <div appSlideIn2 class="text-center p-2 lg:max-w-[50vw] text-white">
+    <h1 class="text-[52px] lg:text-[90px] font-yevesa">{{ title }}</h1>
+    <p class="text-sm tracking-wider p-4" *ngIf="subtitle">
+      {{ subtitle }}
+    </p>
+  </div>
+</section>
