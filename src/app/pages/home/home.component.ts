@@ -15,6 +15,7 @@ import {
 import { SlideInDirective } from 'src/app/directives/slide-in.directive';
 import { ObserveVisibilityDirective } from 'src/app/directives/observe-visibility.directive';
 import { SlidesComponent } from '../../components/slides/slides.component';
+import { SlideIn2Directive } from 'src/app/directives/slide-in-2.directive';
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -32,6 +33,7 @@ import { SlidesComponent } from '../../components/slides/slides.component';
     SlideInDirective,
     ObserveVisibilityDirective,
     SlidesComponent,
+    SlideIn2Directive
   ],
 })
 export class HomeComponent {

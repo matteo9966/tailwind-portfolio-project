@@ -1,0 +1,15 @@
+<div (mousemove)="onMouseOver($event)" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()" #container class="w-full m-auto bg-backgroundMain  border-4 border-green-600 scroll-container overflow-scroll h-[500px]">
+    <div
+      #imagescontainer
+      class="transition-transform duration-1 ease-linear flex gap-[15px] border-2 overflow-visible"
+    >
+      <div class="h-[500px] bg-white flex-grow-0 flex-shrink-0 aspect-square" *ngFor="let i of images;let ind=index">
+        <app-slideshow-image
+          
+          [slideNumber]="ind"
+          [slideNumbers]="images.length"
+        ></app-slideshow-image>
+      </div>
+    </div>
+
+</div>

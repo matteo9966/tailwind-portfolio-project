@@ -28,6 +28,9 @@ import {
   standalone: true,
   exportAs:'slideIn'
 })
+/**
+ * @deprecated
+ */
 export class SlideInDirective implements AfterViewInit {
   private renderer = inject(Renderer2);
   private element = inject(ElementRef);

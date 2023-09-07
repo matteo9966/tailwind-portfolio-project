@@ -1,5 +1,4 @@
 <div class="bg-backgroundMain group" [ngClass]="{ open: menuOpen }">
-  
   <div
     class="flex py-7 px-2 text-white justify-between items-center hover:text-primary transition-colors duration-300 border-t-[1px] border-b-[1px] border-gray-800"
     (click)="menuOpen = !menuOpen"
@@ -18,10 +17,11 @@
     </div>
   </div>
 
-   <div class="w-full max-h-0 group-[.open]:max-h-[700px] overflow-hidden transition-all duration-700">
+  <div
+    class="w-full max-h-0 group-[.open]:max-h-[300px] overflow-hidden transition-all duration-700 bg-backgroundMain-lighter"
+  >
     <p class="text-white p-6">
-      {{answer}}
+      {{ answer }}
     </p>
   </div>
-
 </div>
