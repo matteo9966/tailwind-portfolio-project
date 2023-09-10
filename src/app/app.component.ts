@@ -8,34 +8,21 @@ import { BehaviorSubject, Subject, throttleTime,skip } from 'rxjs';
 import { TextDrawerComponent } from './components/text-drawer/text-drawer.component';
 import { ImagesSlideshowComponent } from "./components/images-slideshow/images-slideshow.component";
 import { ToggleComponent } from './components/toggle/toggle.component';
+import { TicketCardComponent } from './components/ticket-card/ticket-card.component';
 
 @Component({
     selector: 'app-root',
     standalone: true,
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
-    imports: [CommonModule, RouterOutlet, NavbarComponent, FooterComponent,ToggleComponent ]
+    imports: [CommonModule, RouterOutlet, NavbarComponent, FooterComponent,TicketCardComponent ]
 })
 export class AppComponent implements OnInit {
-  resize$ = new BehaviorSubject(window.innerWidth);
-  @HostListener('window:resize')
-  onResizeWindow() {
-    const prev = this.resize$.getValue();
-    const current = window.innerWidth;
-    if(prev && current){
-      if(Math.abs(prev-current)>150){
-        this.resize$.next(window.innerWidth);
-      }
-    }
-  }
+
+
   
   ngOnInit(): void {
-    this.resize$
-    .asObservable()
-    .pipe(skip(1),throttleTime(1000, undefined, { leading: false, trailing: true }))
-    .subscribe((value) => {
-      window.location.reload();
-      });
+
   }
 
   title = 'tailwind-portfolio-project';

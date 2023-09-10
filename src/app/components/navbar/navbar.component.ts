@@ -58,7 +58,6 @@ export class NavbarComponent implements OnInit {
   showBg$:Observable<boolean>
   //@ts-ignore
   mobileMenuComponent: ComponentRef<MobileMenuComponent>;
-  cdr = inject(ChangeDetectorRef);
   router =inject(Router);
 
   private _open=false;

@@ -1,10 +1,6 @@
 import { Routes } from '@angular/router';
 import { pagesConfig } from './config/pages';
-export const routesLinks = {
-  home: 'home',
-  photoGallery: 'gallery',
-  faq: 'faq',
-};
+
 export const routes: Routes = [
   {
     path: pagesConfig.home.routerPath,
@@ -32,7 +28,7 @@ export const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: routesLinks.home,
+    redirectTo: pagesConfig.home.routerPath,
     pathMatch: 'full',
   },
   {

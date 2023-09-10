@@ -9,11 +9,6 @@ export const pagesConfig = {
     link: '/gallery',
     routerPath: 'gallery',
   },
-  animals: {
-    label: 'animals',
-    link: '/animals',
-    routerPath: 'animals',
-  },
   faq: {
     label: 'faq',
     link: '/faq',

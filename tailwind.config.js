@@ -20,7 +20,7 @@ module.exports = {
         wide: "1440px",
       },
       backgroundImage: {
-        hero: "url(assets/images/hero-bg.avif)",
+        hero: "url(assets/images/hero-main.jpg)",
         bigMoving: "url(assets/images/big-image-section.webp)",
         movingSquare: "url(assets/images/square-image.webp)",
         slider: "url(assets/images/slides-bg.webp)",
