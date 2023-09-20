@@ -6,4 +6,6 @@ This is a tailwind + Angular project
 
 Lazy loads images using intersection observer
 
+https://matteo9966.github.io/tailwind-portfolio-project/home
+
 
